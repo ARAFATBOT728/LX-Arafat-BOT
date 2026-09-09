@@ -51,8 +51,7 @@
 <!-- ========== END CLEAN SECTION ========== -->
 
 ### <br>   ❖ DEPLOY_WORKFLOWS ❖
-
-```yaml
+```
 name: Node.js CI
 
 on:
@@ -89,82 +88,98 @@ jobs:
       env:
         PORT: 8080
       run: npm start
-
+```
 ---
 
-HOW TO USE THIS PROJECT 🚀
+## HOW TO USE THIS PROJECT 🚀
 
-""Watch Tutorial" (https://img.shields.io/badge/%20%20%20%20%20WATCH%20FULL%20TUTORIAL%20%20%20%20%20-YOUTUBE-red?logo=youtube&logoColor=white&style=for-the-badge)" (https://youtu.be/blg0O7IgcrA?si=vpz42AK06uIblLN9)
+[![Watch Tutorial](https://img.shields.io/badge/%20%20%20%20%20WATCH%20FULL%20TUTORIAL%20%20%20%20%20-YOUTUBE-red?logo=youtube&logoColor=white&style=for-the-badge)](https://youtu.be/blg0O7IgcrA?si=vpz42AK06uIblLN9)
 
 Click the image above to watch the step-by-step tutorial on YouTube.
 
-<br><p align="center">  <!-- ⭐ Repository Button -->  <a href="https://github.com/YOUR_GITHUB_USERNAME/LX-ARAFAT-CHAT-BOT">
+<br>
+
+<p align="center"> 
+  
+  <!-- ⭐ Repository Button -->  
+  <a href="https://github.com/YOUR_GITHUB_USERNAME/LX-ARAFAT-CHAT-BOT">
     <img src="https://img.shields.io/badge/MY%20REPOSITORY-blue?style=for-the-badge&logo=github&logoColor=white" alt="My Repo">
-  </a>  <!-- ⭐ Import Button -->  <a href="https://github.com/new/import?source=https://github.com/YOUR_GITHUB_USERNAME/LX-ARAFAT-CHAT-BOT">
+  </a> 
+  
+  <!-- ⭐ Import Button --> 
+  <a href="https://github.com/new/import?source=https://github.com/YOUR_GITHUB_USERNAME/LX-ARAFAT-CHAT-BOT">
     <img src="https://img.shields.io/badge/IMPORT%20REPOSITORY-black?style=for-the-badge&logo=github&logoColor=white" alt="Import Repo">
-  </a></p>Steps to Run the Bot
+  </a>
+  
+  </p>
 
-Start Command
-Navigate to the folder where your bot files are located:
 
+  
+##  Steps to Run the Bot
+
+**Start Command**
+Navigate to the folder where your bot files are     located:
+   ```bash
 node Arafat.js
+```
 
----
 
-🔥 Features
+----
 
-• Auto Chat
+## 🔥 Features
+
+**• Auto Chat**
 Enjoy automatic and seamless conversations through natural language processing.
 
-• Photo Editing
+**• Photo Editing**
 Edit professional quality photos using our advanced commands, no additional apps needed.
 
-• Image Generation
+**• Image Generation**
 Create unique images using our cutting-edge text-to-image technology.
 
-• Video Downloader
+**• Video Downloader**
 Download HD videos from YouTube, Facebook, TikTok and other platforms.
 
-• Interactive Games
+**• Interactive Games**
 Play 20+ fun games directly in messenger, no installation hassle!
 
-• Fun Commands
+**• Fun Commands**
 Surprise your friends with hundreds of fun commands!
 
 ---
 
-🚀 Deployments
+## 🚀 Deployments
 
-Status| Action
-"Replit" (https://img.shields.io/badge/Replit-F26D00?style=for-the-badge&logo=replit&logoColor=white)| ""Deploy" (https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)" (https://replit.com)
-"Render" (https://img.shields.io/badge/Render-3FE0C5?style=for-the-badge&logo=render&logoColor=black)| ""Deploy" (https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)" (https://render.com)
-"Railway" (https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)| ""Deploy" (https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)" (https://railway.app)
-
+| **Status** | **Action** |
+|------------|------------|
+| ![Replit](https://img.shields.io/badge/Replit-F26D00?style=for-the-badge&logo=replit&logoColor=white) | [![Deploy](https://img.shields.io/badge/DEPLOY-  CLICK%20HERE-blue?style=for-the-badge)] (https://replit.com) |
+| ![Render](https://img.shields.io/badge/Render-3FE0C5?style=for-the-badge&logo=render&logoColor=black) | [![Deploy](https://img.shields.io/badge/DEPLOY-  CLICK%20HERE-blue?style=for-the-badge)] (https://render.com) |
+| ![Railway](https://img.shields.io/badge/Railway-   0B0D0E?style=for-the-  badge&logo=railway&logoColor=white) | [![Deploy](https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)](https://railway.app) |
 ---
 
-👨‍💻 ABOUT THE DEVELOPER
+## 👨‍💻 ABOUT THE DEVELOPER
 
-Name: "LX ARAFAT"
-Nice Name: "ARAFAT"
-Profession: "STUDENT & CHATBOT DEVELOPER"
-Location: "BOGURA, BANGLADESH"
+**Name:** `LX ARAFAT`
+**Nice Name:** `ARAFAT`
+**Profession:** `STUDENT & CHATBOT DEVELOPER`
+**Location:** `BOGURA, BANGLADESH`
 
-📞 CONTACT
+#### 📞 CONTACT
+- **WhatsApp:** [WhatsApp Me](https://wa.me/+8801826618633)
+- **Facebook:** [Profile Me](https://facebook.com/61581249425737)
+- **Messenger:** [Message Me](https://m.me/61581249425737)
 
-- WhatsApp: "WhatsApp Me" (https://wa.me/+8801826618633)
-- Facebook: "Profile Me" (https://facebook.com/61581249425737)
-- Messenger: "Message Me" (https://m.me/61581249425737)
-
-🚀 APPROACH
-
+#### 🚀 APPROACH
 - 💻 Copy-paste techniques with deep customizations
 - 🤝 Collaborative development with friends
 - 🤖 AI-powered workflow using ChatGPT & modern tools
-
 ---
 
-❖ SUPPORT
 
+
+
+
+## ❖ SUPPORT
 If you need any help, you can contact the admin.
 Please do not disturb the admin unless you have a special need. Thank you!
 
@@ -175,20 +190,23 @@ Please do not disturb the admin unless you have a special need. Thank you!
   <a href="https://m.me/61581249425737">
     <img alt="Messenger" src="https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white">
   </a>
-</p>---
-
-✨🌟 Special Thanks 🌟✨
-
-- 🚀 Cyber Bot Team
-- 🧙‍♂️ Ullash (Owner Cyber Bot Team)
-- 🛡️ Sujon (Admin Cyber Bot Team)
-- 🎓 Grandpa EJ (Owner Grandpa Academy)
+</p>
 
 ---
 
-💖 Thank You For Choosing 𝗟𝗫 𝗔𝗿𝗮𝗳𝗮𝘁 𝗖𝗵𝗮𝘁 𝗕𝗼𝘁!
-🗓️ Release Date: "09/09/2026"
-⭐ Please don't forget to give a star after using the repository! It really helps!
+## ✨🌟 Special Thanks 🌟✨
+
+- 🚀 **Cyber Bot Team**
+- 🧙‍♂️ **Ullash (Owner Cyber Bot Team)**
+- 🛡️ **Sujon (Admin Cyber Bot Team)**
+- 🎓 **Grandpa EJ (Owner Grandpa Academy)**
+
+---
+
+💖 **Thank You For Choosing 𝗟𝗫 𝗔𝗿𝗮𝗳𝗮𝘁 𝗖𝗵𝗮𝘁 𝗕𝗼𝘁!**
+🗓️ *Release Date:* `09/09/2026`
+⭐ **Please don't forget to give a star after using the repository! It really helps!**
+
 
 <p align="center">
   <a href="https://github.com/YOUR_GITHUB_USERNAME"><img src="https://img.icons8.com/fluency/48/000000/github.png" alt="GitHub"></a>
@@ -196,4 +214,6 @@ Please do not disturb the admin unless you have a special need. Thank you!
   <a href="https://facebook.com/61581249425737"><img src="https://img.icons8.com/fluency/48/000000/facebook.png" alt="Facebook"></a>
   <a href="https://t.me/cyber_bot01"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram"></a>
   <a href="https://youtube.com/@scb-community"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
-</p>I hope you enjoy my customized LX ARAFAT Chat Bot! Thank you for your support!
+</p>
+
+**I hope you enjoy my customized LX ARAFAT Chat Bot! Thank you for your support!**
