@@ -27,7 +27,6 @@
   </span>
 
 </p>
-
 <!-- ========== CLEAN PREMIUM BADGE SECTION ========== -->
 
 <div align="center">
@@ -89,8 +88,9 @@ jobs:
         PORT: 8080
       run: npm start
 ```
----
 
+
+---
 ## HOW TO USE THIS PROJECT 🚀
 
 [![Watch Tutorial](https://img.shields.io/badge/%20%20%20%20%20WATCH%20FULL%20TUTORIAL%20%20%20%20%20-YOUTUBE-red?logo=youtube&logoColor=white&style=for-the-badge)](https://youtu.be/blg0O7IgcrA?si=vpz42AK06uIblLN9)
@@ -152,9 +152,9 @@ Surprise your friends with hundreds of fun commands!
 
 | **Status** | **Action** |
 |------------|------------|
-| ![Replit](https://img.shields.io/badge/Replit-F26D00?style=for-the-badge&logo=replit&logoColor=white) | [![Deploy](https://img.shields.io/badge/DEPLOY-  CLICK%20HERE-blue?style=for-the-badge)] (https://replit.com) |
-| ![Render](https://img.shields.io/badge/Render-3FE0C5?style=for-the-badge&logo=render&logoColor=black) | [![Deploy](https://img.shields.io/badge/DEPLOY-  CLICK%20HERE-blue?style=for-the-badge)] (https://render.com) |
-| ![Railway](https://img.shields.io/badge/Railway-   0B0D0E?style=for-the-  badge&logo=railway&logoColor=white) | [![Deploy](https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)](https://railway.app) |
+| ![Replit](https://img.shields.io/badge/Replit-F26D00?style=for-the-badge&logo=replit&logoColor=white) | [![Deploy](https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)](https://replit.com) |
+| ![Render](https://img.shields.io/badge/Render-3FE0C5?style=for-the-badge&logo=render&logoColor=black) | [![Deploy](https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)](https://render.com) |
+| ![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white) | [![Deploy](https://img.shields.io/badge/DEPLOY-CLICK%20HERE-blue?style=for-the-badge)](https://railway.app) |
 ---
 
 ## 👨‍💻 ABOUT THE DEVELOPER
