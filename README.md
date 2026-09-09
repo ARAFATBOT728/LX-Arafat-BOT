@@ -213,7 +213,7 @@ Please do not disturb the admin unless you have a special need. Thank you!
   <a href="https://wa.me/+8801826618633"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp"></a>
   <a href="https://facebook.com/61581249425737"><img src="https://img.icons8.com/fluency/48/000000/facebook.png" alt="Facebook"></a>
   <a href="https://t.me/lxarafat639"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram"></a>
-  <a href="https://youtube.com/@scb-community"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
+  <a href="https://youtube.com/@SkRahad-f1o"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"></a>
 </p>
 
 **I hope you enjoy my customized LX ARAFAT Chat Bot! Thank you for your support!**
