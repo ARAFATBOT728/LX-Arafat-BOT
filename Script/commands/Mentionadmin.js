@@ -2,7 +2,7 @@ module.exports.config = {
   name: "adminmention",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "LX ARAFAT",
+  credits: "SHAHADAT SAHU",
   description: "Bot will reply only when someone directly mentions an admin",
   commandCategory: "Other",
   usages: "@",
