@@ -12,7 +12,7 @@ module.exports = {
     name: "4k",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "LX ARAFAT",
+    credits: "SHAHADAT SAHU",
     description: "Enhance image with Remini AI",
     commandCategory: "image",
     usages: "[reply image]",
