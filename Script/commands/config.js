@@ -601,4 +601,269 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
   		}
   		catch(err) {
   			failed.push(postID);
-              
+  		};
+    }
+    reply(`» Deleted successfully ${success.length} posts${failed.length > 0 ? `\n»Delete failed ${failed.length} posts, postID: ${failed.join(" ")}` : ""}`);
+  }
+  
+  
+  else if (type == 'choiceIdReactionPost') {
+    if (!body) return reply(`Please enter the post id you want to react to`, (e, info) => {
+      global.client.handleReply.push({
+        name: this.config.name,
+        messageID: info.messageID,
+        author: senderID,
+        type: "choiceIdReactionPost"
+      });
+    });
+    
+    const listID = body.replace(/\s+/g, " ").split(" ");
+    
+    reply(`Enter the emotion you want to react to ${listID.length} posts (unlike/like/love/heart/haha/wow/sad/angry)`, (e, info) => {
+      global.client.handleReply.push({
+        name: this.config.name,
+        messageID: info.messageID,
+        author: senderID,
+        listID,
+        type: "reactionPost"
+      });
+    })
+  }
+  
+  
+  else if (type == 'reactionPost') {
+    const success = [];
+    const failed = [];
+    const postIDs = handleReply.listID;
+    const feeling = body.toLowerCase();
+    if (!'unlike/like/love/heart/haha/wow/sad/angry'.split('/').includes(feeling)) return reply('Please choose one of the following emotions unlike/like/love/heart/haha/wow/sad/angry', (e, info) => {
+      global.client.handleReply.push({
+        name: this.config.name,
+        messageID: info.messageID,
+        author: senderID,
+        listID,
+        type: "reactionPost"
+      })
+    });
+    for (const postID of postIDs) {
+      try {
+        await api.setPostReaction(Number(postID), feeling);
+        success.push(postID);
+      }
+      catch(err) {
+        failed.push(postID);
+      }
+    }
+    reply(`» Released emotions ${feeling} give ${success.length} successful post${failed.length > 0 ? `» Reaction failed ${failed.length} posts, postID: ${failed.join(" ")}` : ''}`);
+  }
+  
+  
+  else if (type == 'addFiends') {
+    const listID = body.replace(/\s+/g, " ").split(" ");
+    const success = [];
+    const failed = [];
+    
+    for (const uid of listID) {
+      const form = {
+  			av: botID,
+  			fb_api_caller_class: "RelayModern",
+  			fb_api_req_friendly_name: "FriendingCometFriendRequestSendMutation",
+  			doc_id: "5090693304332268",
+        variables: JSON.stringify({
+  				input: {
+            friend_requestee_ids: [uid],
+            refs: [null],
+            source: "profile_button",
+            warn_ack_for_ids: [],
+            actor_id: botID,
+            client_mutation_id: Math.round(Math.random() * 19).toString()
+          },
+          scale: 3
+  			})
+      };
+      try {
+        const sendAdd = await api.httpPost('https://www.facebook.com/api/graphql/', form);
+        if (JSON.parse(sendAdd).errors) failed.push(uid);
+        else success.push(uid)
+      }
+      catch(e) {
+        failed.push(uid);
+      };
+    }
+    reply(`» Friend request has been sent successfully to ${success.length} id${failed.length > 0 ? `\n» Send a friend request to ${failed.length} id failure: ${failed.join(" ")}` : ""}`);
+  }
+  
+  
+  else if (type == 'choiceIdSendMessage') {
+    const listID = body.replace(/\s+/g, " ").split(" ");
+    reply(`Enter the text of the message you want to send ${listID.length} user`, (e, info) => {
+      global.client.handleReply.push({
+        name: this.config.name,
+        messageID: info.messageID,
+        author: senderID,
+        listID,
+        type: "sendMessage"
+      });
+    })
+  }
+  
+  
+  else if (type == 'unFriends') {
+    const listID = body.replace(/\s+/g, " ").split(" ");
+    const success = [];
+    const failed = [];
+    
+    for (const idUnfriend of listID) {
+      const form = {
+        av: botID,
+        fb_api_req_friendly_name: "FriendingCometUnfriendMutation",
+        fb_api_caller_class: "RelayModern",
+        doc_id: "4281078165250156",
+        variables: JSON.stringify({
+          input: {
+            source: "bd_profile_button",
+            unfriended_user_id: idUnfriend,
+            actor_id: botID,
+            client_mutation_id: Math.round(Math.random()*19)
+          },
+          scale:3
+        })
+      };
+      try {
+        const sendAdd = await api.httpPost('https://www.facebook.com/api/graphql/', form);
+        if (JSON.parse(sendAdd).errors) failed.push(`${idUnfriend}: ${JSON.parse(sendAdd).errors[0].summary}`);
+        else success.push(idUnfriend)
+      }
+      catch(e) {
+        failed.push(idUnfriend);
+      };
+	} 
+    reply(`» Deleted successfully ${success.length} friend${failed.length > 0 ? `\n» Delete failed ${failed.length} friend:\n${failed.join("\n")}` : ""}`);
+  }
+  
+  
+  else if (type == 'sendMessage') {
+    const listID = handleReply.listID;
+    const success = [];
+    const failed = [];
+    for (const uid of listID) {
+      try {
+        const sendMsg = await api.sendMessage(body, uid);
+        if (!sendMsg.messageID) failed.push(uid);
+        else success.push(uid);
+      }
+      catch(e) {
+        failed.push(uid);
+      }
+    }
+    reply(`» Message sent successfully to ${success.length} user${failed.length > 0 ? `\n» Send a message to ${failed.length} user failed: ${failed.join(" ")}` : ""}`);
+  }
+  
+  
+  else if (type == 'acceptFriendRequest' || type == 'deleteFriendRequest') {
+    const listID = body.replace(/\s+/g, " ").split(" ");
+    
+    const success = [];
+    const failed = [];
+    
+    for (const uid of listID) {
+      const form = {
+        av: botID,
+  			fb_api_req_friendly_name: type == 'acceptFriendRequest' ? "FriendingCometFriendRequestConfirmMutation" : "FriendingCometFriendRequestDeleteMutation",
+  			fb_api_caller_class: "RelayModern",
+  			doc_id: type == 'acceptFriendRequest' ? "3147613905362928" : "4108254489275063",
+  			variables: JSON.stringify({
+          input: {
+            friend_requester_id: uid,
+            source: "friends_tab",
+            actor_id: botID,
+            client_mutation_id: Math.round(Math.random() * 19).toString()
+          },
+          scale: 3,
+          refresh_num: 0
+  			})
+      };
+      try {
+        const friendRequest = await api.httpPost("https://www.facebook.com/api/graphql/", form);
+        if (JSON.parse(friendRequest).errors) failed.push(uid);
+        else success.push(uid);
+      }
+      catch(e) {
+        failed.push(uid);
+      }
+    }
+    reply(`» Is already ${type == 'acceptFriendRequest' ? 'accept' : 'erase'} successful friend request of ${success.length} id${failed.length > 0 ? `\n» Fail with ${failed.length} id: ${failed.join(" ")}` : ""}`);
+  }
+  
+  
+  else if (type == 'noteCode') {
+    axios({
+      url: 'https://buildtool.dev/verification',
+      method: 'post',
+      data: `content=${encodeURIComponent(body)}&code_class=language${encodeURIComponent('-')}javascript`
+    })
+    .then(response => {
+      const href = response.data.split('<a href="code-viewer.php?')[1].split('">Permanent link</a>')[0];
+      reply(`Create a successful note, link: ${'https://buildtool.dev/code-viewer.php?' + href}`)
+    })
+    .catch(err => {
+      reply('An error occurred, please try again later');
+    })
+  }
+};
+
+
+module.exports.run = async ({ event, api }) => {
+  const { threadID, messageID, senderID } = event;
+  
+  api.sendMessage("⚙️⚙️─꯭─⃝‌‌𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭 Command List ⚙️⚙️"
+     + "\n[01] Edit bot bio"
+     + "\n[02] Edit bot nicknames"
+     + "\n[03] View pending messages"
+     + "\n[04] View unread messages"
+     + "\n[05] View spam messages"
+     + "\n[06] Change bot avatar"
+     + "\n[07] Turn on the bot avatar shield <on/off>"
+     + "\n[08] Block users (messenger)"
+     + "\n[09] Unblock users (messenger)"
+     + "\n[10] Create post"
+     + "\n[11] Delete post"
+     + "\n[12] Delete post (user)"
+     + "\n[13] Comment the post (group)"
+     + "\n[14] Drop post feelings"
+     + "\n[15] Make friends by id"
+     + "\n[16] Accept friend request by id"
+     + "\n[17] Decline friend request by id"
+     + "\n[18] Delete friends by id"
+     + "\n[19] Send a message by id"
+     + "\n[20] Make notes on buildtool.dev"
+     + "\n[21] Log out of your account"
+    + "\n````````````````````````````````"
+    + `\n» Admin ID:\n${global.config.ADMINBOT.join("\n")}`
+    + `\n» Bot ID: ${api.getCurrentUserID()}`
+    + `\n» Please reply to this message with the order number you want to execute`
+    + "\n````````````````````````````````", threadID, (err, info) => {
+    global.client.handleReply.push({
+      name: this.config.name,
+      messageID: info.messageID,
+      author: senderID,
+      type: "menu"
+    });
+  }, messageID);
+};
+
+
+function getGUID() {
+    const key = `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`;
+    let timeNow = Date.now(),
+        r = key.replace(/[xy]/g, function (info) {
+            let a = Math.floor((timeNow + Math.random() * 16) % 16);
+            timeNow = Math.floor(timeNow / 16);
+            let b = (info == 'x' ? a : a & 7 | 8).toString(16);
+            return b;
+        });
+  console.log(r)
+    return r;
+}
+getGUID()
+////muhahhahahaha encode cái dmm				
